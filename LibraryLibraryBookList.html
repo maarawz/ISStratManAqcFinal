@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Dashboard</title>
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+body {
+    display: flex;
+    background: #e6e6e6;
+}
+
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: #111;
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+    color: #1abc9c;
+}
+
+.logout {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+}
+
+.main {
+    margin-left: 220px;
+    width: 100%;
+}
+
+.topbar {
+    height: 70px;
+    background: #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.logo span {
+    background: #000000;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.content {
+padding: 30px;
+}
+
+.card-container {
+    background: #f2f2f2;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 22%;
+    background: #3f3d6c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #effffc;
+}
+
+.card p {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.table-container h2 {
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #3f3d6c;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.borrowed {
+    color: red;
+    font-weight: bold;
+}
+
+@media(max-width: 900px){
+    .card {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+}
+
+@media(max-width: 600px){
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>ADMIN</h2>
+    <ul>
+        <li><a href="#">DASHBOARD</a></li>
+        <li><a href="#">ADD BOOKS</a></li>
+        <li><a href="#">BORROW & RETURN</a></li>
+        <li><a href="#">INVENTORY</a></li>
+    </ul>
+
+    <div class="logout">
+        LOGOUT ⏻
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+        <div class="logo">
+            Intelli<span>Lib</span>
+        </div>
+        <div>🔔</div>
+    </div>
+
+<div class="content">
+
+    <div class="table-container">
+        <h2>Library Inventory</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>To Kill a Mockingbird</td><td>Harper Lee</td><td>Fiction</td><td>5</td><td class="available">Available</td></tr>
+                <tr><td>1984</td><td>George Orwell</td><td>Dystopian</td><td>3</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>The Great Gatsby</td><td>F. Scott Fitzgerald</td><td>Classic</td><td>4</td><td class="available">Available</td></tr>
+                <tr><td>Moby Dick</td><td>Herman Melville</td><td>Adventure</td><td>2</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>Pride and Prejudice</td><td>Jane Austen</td><td>Romance</td><td>6</td><td class="available">Available</td></tr>
+                <tr><td>The Hobbit</td><td>J.R.R. Tolkien</td><td>Fantasy</td><td>5</td><td class="available">Available</td></tr>
+                <tr><td>War and Peace</td><td>Leo Tolstoy</td><td>Historical</td><td>1</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>The Catcher in the Rye</td><td>J.D. Salinger</td><td>Fiction</td><td>4</td><td class="available">Available</td></tr>
+                <tr><td>Crime and Punishment</td><td>Fyodor Dostoevsky</td><td>Classic</td><td>2</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>Harry Potter</td><td>J.K. Rowling</td><td>Fantasy</td><td>7</td><td class="available">Available</td></tr>
+                <tr><td>The Alchemist</td><td>Paulo Coelho</td><td>Fiction</td><td>5</td><td class="available">Available</td></tr>
+                <tr><td>Brave New World</td><td>Aldous Huxley</td><td>Dystopian</td><td>3</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>The Odyssey</td><td>Homer</td><td>Epic</td><td>2</td><td class="available">Available</td></tr>
+                <tr><td>Jane Eyre</td><td>Charlotte Brontë</td><td>Romance</td><td>4</td><td class="available">Available</td></tr>
+                <tr><td>Dracula</td><td>Bram Stoker</td><td>Horror</td><td>3</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>The Shining</td><td>Stephen King</td><td>Horror</td><td>2</td><td class="available">Available</td></tr>
+                <tr><td>Frankenstein</td><td>Mary Shelley</td><td>Science Fiction</td><td>3</td><td class="available">Available</td></tr>
+                <tr><td>The Book Thief</td><td>Markus Zusak</td><td>Historical</td><td>4</td><td class="borrowed">Borrowed</td></tr>
+                <tr><td>The Road</td><td>Cormac McCarthy</td><td>Post-Apocalyptic</td><td>2</td><td class="available">Available</td></tr>
+                <tr><td>Life of Pi</td><td>Yann Martel</td><td>Adventure</td><td>3</td><td class="available">Available</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
